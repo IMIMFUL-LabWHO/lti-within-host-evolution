@@ -29,7 +29,7 @@ singularity build --fakeroot lti.sif 20250313_lti.def #if no sudo privileges
 
 4. Download FASTQ files using the download_fastq.sh file provided in scripts directory
 ```
-bash download_fastq.sh
+singularity exec /path/to/lti.sif bash download_fastq.sh
 ```
 
 5. Run LTIseek (check config.sh file for correct path to fastq_data directory and pipeline settings):
