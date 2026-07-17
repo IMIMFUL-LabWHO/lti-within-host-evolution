@@ -1,0 +1,32 @@
+Bootstrap: docker
+From: ubuntu:22.04
+
+%help 
+    lti container
+
+%labels
+    Maintained by alen.suljic@mf.uni-lj.si
+
+%environment
+    LANG=C.UTF-8
+    LC_ALL=C.UTF-8
+    export LANG LC_ALL
+
+%post
+    apt-get -y update && apt-get -y upgrade
+    apt autoremove
+    apt install --fix-missing --install-recommends -y curl rsync zlib1g-dev libbz2-dev libssl-dev parallel
+
+    cd /opt
+    curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
+    bash Miniforge3-$(uname)-$(uname -m).sh -b -p /opt/miniforge
+    . /opt/miniforge/bin/activate
+
+    mamba create -y -n lti -c bioconda python fastp seqtk bwa samtools ivar vcfkit
+
+    conda activate lti
+
+%environment
+  export PATH=$PATH:/opt/miniforge/envs/lti/bin/
+  export PATH=$PATH:/opt/miniforge/pkgs/
+  export PATH=$PATH:/opt/miniforge/bin/
