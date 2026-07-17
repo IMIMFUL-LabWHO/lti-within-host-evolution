@@ -15,7 +15,7 @@ From: ubuntu:22.04
 %post
     apt-get -y update && apt-get -y upgrade
     apt autoremove
-    apt install --fix-missing --install-recommends -y curl rsync zlib1g-dev libbz2-dev libssl-dev parallel
+    apt install --fix-missing --install-recommends -y curl wget rsync zlib1g-dev libbz2-dev libssl-dev parallel
 
     cd /opt
     curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-$(uname)-$(uname -m).sh"
