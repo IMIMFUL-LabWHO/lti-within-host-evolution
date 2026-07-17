@@ -11,7 +11,7 @@ Use the supplied metadata.csv and variants.csv files in data directory to reprod
 
 **Level 2 (full pipeline):**
 
-Download raw FASTQ files listed in samples.csv, process them using the included LTIseek workflow, and regenerate the variants dataset before repeating the statistical analyses.
+Download raw FASTQ files, process them using the included LTIseek workflow, and regenerate the variants dataset before repeating the statistical analyses.
 
 Level 2 workflow steps:
 
