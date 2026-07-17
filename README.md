@@ -3,6 +3,7 @@ Repository of code and metadata used to analyse the SARS-CoV-2 sequencing data f
 When in doubt, write alen.suljic@mf.uni-lj.si
 
 Two levels of reproducibilty are provided:
+
 Level 1 (faster):
 
 Use the supplied metadata.csv and variants.csv files in data directory to reproduce all statistical analyses and figures in the manuscript using R script lti-within-host-evolution.R, provided in statistical_analysis directory.
